@@ -55,7 +55,7 @@ const user = {
 
     setRoles({ commit, state }, roles) {
       commit('SET_ROLES', roles);
-    }
+    },
   }
 };
 

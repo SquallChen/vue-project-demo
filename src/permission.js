@@ -21,6 +21,7 @@ router.beforeEach((to, from, next) => {
     if (to.path === '/login') { //登陆后访问login自动跳到/默认页
       next({ path: '/' });
     }
+    next();
   } else { //未登陆状态
     if (to.path === '/login') {
       next();

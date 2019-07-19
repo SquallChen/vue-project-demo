@@ -1,14 +1,3 @@
-/*
- *
- * File Created: 2018-12-11 11:22:43, Tuesday
- * Author: chenzway
- * Email:  chenzway@163.com
- * -----
- * Last Modified: 2018-12-26 15:10:19, Wednesday
- * Modified By: chenzway
- * -----
- *  cookie， localStorage, sessionStorage 操作方法
- */
 import Cookies from 'js-cookie';
 
 function getToken() {

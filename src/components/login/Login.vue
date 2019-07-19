@@ -73,25 +73,10 @@ export default {
     login() {
       if (this.picLyanzhengma.toUpperCase() === this.code) {//toUpperCase将字符转为大写
         this.loading = true;
-        this.$store
-          .dispatch('actionLogin', this.loginForm)
-          .then(res => {
+        this.$store .dispatch('actionLogin', this.loginForm) .then(res => {
             if (res) {
-              auth_rules_page()
-                .then(r => {
-                  let auth = [];
-                  r.recordList.forEach(v => {
-                    auth.push(v.functionurl);
-                  });
-                  local.set('auth', auth);
-                  console.log(local.get('auth'));
-                  // console.log(local.get('auth').indexOf('api/cors/stationPage/delete_index') != -1);
-                  this.$router.push({ path: '/' });
-                  this.loading = false;
-                })
-                .catch(() => {
-                  this.loading = false;
-                });
+              this.loading = false;
+              this.$router.push({ path: '/' });
             } else {
               this.loading = false;
             }
@@ -100,7 +85,7 @@ export default {
             this.loading = false;
           });
       } else {
-        this.$message.error(this.$t('prompt.reenterVerification'));
+        this.$message.error('请重新输入验证码');
         this.picLyanzhengma = '';
       }
     },
